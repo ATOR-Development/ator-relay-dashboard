@@ -531,6 +531,10 @@ const handleUnlockClick = async (fingerprint: string) => {
                 <span class="text-gray-800 dark:text-white">Claimed:</span> This
                 item has already been claimed. No further action is needed.
               </div>
+              <div class="text-xs font-normal text-gray-600 dark:text-gray-300">
+                <span class="text-gray-800 dark:text-white">Locked:</span> Your
+                lock tx is awaiting Arweave confirmation.
+              </div>
             </template>
             <template #trigger>
               <div><Icon name="heroicons:exclamation-circle" /></div>

@@ -106,11 +106,13 @@ import { initFacilitator } from '@/composables/facilitator';
 import { initToken } from '@/composables/token';
 import { type RelayTabType } from '@/types/relay';
 import Card from '~/components/ui-kit/Card.vue';
+import { useMetricsStore } from '@/stores/useMetricsStore';
 
 const userStore = useUserStore();
 const registrator = useRegistrator();
 const registerModalOpen = ref(false);
 const currentTab = ref<RelayTabType>('all');
+const metricsStore = useMetricsStore();
 
 onMounted(async () => {
   initRelayRegistry();
@@ -121,6 +123,7 @@ onMounted(async () => {
   initToken();
 
   await userStore.getVerifiedRelays();
+  await metricsStore.refreshRelayMetrics();
 });
 
 const loadLockedRelays = async () => {

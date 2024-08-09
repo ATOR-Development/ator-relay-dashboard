@@ -244,7 +244,7 @@ export class Registrator {
         title: 'Success',
         id: 'relay-locked',
         timeout: 0,
-        description: `Relay locked. We've locked ${formatEther(registratorStore.currentLockSize || '0')} $ANYONE. Please click the "claim" button to claim your relay on Arweave.`,
+        description: `We've locked ${formatEther(registratorStore.currentLockSize || '0')} $ANYONE.  Once picked up on Arweave, you can click the 'claim' button to claim your relay.`,
       });
 
       return result;
