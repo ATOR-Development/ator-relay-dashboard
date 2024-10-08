@@ -6,7 +6,8 @@ import { copyFileSync } from 'fs'
 // const processId = '9UpvN6H7sMo0vkuQeou3Ra0pZguWavtpt_8lfqPQlI8'
 
 // anyone process id
-const processId = 'lZKDfIa5JiWQ8ojjXiRSey_81Bftbib4tLpIJh4UO0g' 
+// const processId = 'lZKDfIa5JiWQ8ojjXiRSey_81Bftbib4tLpIJh4UO0g'
+const processId = 'Rglgc93lGIpqHIgNo9rS0gIkG2s7aodCSMoGysi3r6Y'
 
 const DEPLOY_FOLDER = './.output/public'
 const IRYS_NODE = 'https://node2.irys.xyz/'
