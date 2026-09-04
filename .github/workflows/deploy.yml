@@ -16,6 +16,9 @@ on:
         type: choice
         options:
           - prelive
+          - stage
+          - dev
+          - live
 env:
   IMAGE_NAME: ator-relay-dashboard
 
@@ -52,7 +55,9 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           # Use Docker `latest` tag convention
           [ "$VERSION" == "main" ] && VERSION=stage
-          [ "${{ inputs.phase }}" == "prelive" ] && VERSION=prelive
+          # A manual run picks its own phase. Previously only 'prelive' was honoured, so there was
+          # no manual path to stage and the only route to live was pushing a v* tag.
+          [ -n "${{ inputs.phase }}" ] && VERSION="${{ inputs.phase }}"
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
